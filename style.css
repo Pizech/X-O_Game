@@ -1,0 +1,123 @@
+:root {
+  --primary: #2ecc71;
+  --primary-dark: #27ae60;
+  --background: #181c1f;
+  --foreground: #ecf0f1;
+  --button-bg: #22282c;
+  --button-hover: var(--primary-dark);
+  --button-active: var(--primary);
+  --border: #333;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  color: var(--primary);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+#score, #progress, #winner {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+/* Game board grid */
+.xo-board {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-template-rows: repeat(3, 80px);
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+
+button[id^="box-"] {
+  width: 80px;
+  height: 80px;
+  margin: 0;
+  font-size: 2.5rem;
+  background: var(--button-bg);
+  color: var(--foreground);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  transition: background 0.2s, color 0.2s, border 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  outline: none;
+  font-weight: bold;
+  letter-spacing: 2px;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button[id^="box-"]:hover {
+  background: var(--button-hover);
+  color: #fff;
+  border-color: var(--primary);
+  box-shadow: 0 4px 16px rgba(46,204,113,0.12);
+}
+
+button[id^="box-"]:active {
+  background: var(--button-active);
+  color: #fff;
+}
+
+#box-1, #box-2, #box-3,
+#box-4, #box-5, #box-6,
+#box-7, #box-8, #box-9 {
+  display: block;
+  /* Handled by grid now */
+}
+
+button:not([id^="box-"]) {
+  /* Style for non-board buttons like Reset */
+  margin-top: 1.5rem;
+  padding: 0.5rem 2rem;
+  font-size: 1.1rem;
+  background: var(--primary-dark);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  transition: background 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+}
+
+button:not([id^="box-"]):hover {
+  background: var(--primary);
+}
+
+p {
+  color: #aaa;
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+  .xo-board {
+    grid-template-columns: repeat(3, 45px);
+    grid-template-rows: repeat(3, 45px);
+    gap: 6px;
+  }
+  button[id^="box-"] {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+    border-radius: 7px;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+}

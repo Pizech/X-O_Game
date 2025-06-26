@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>X-O Game</title>
+    <link rel="icon" href="xo.png" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h2>Tic-Tac-Toe Go</h2>
+    <div class="xo-board">
+        <button id="box-1" onclick="player(1);"></button>
+        <button id="box-2" onclick="player(2);"></button>
+        <button id="box-3" onclick="player(3);"></button>
+        <button id="box-4" onclick="player(4);"></button>
+        <button id="box-5" onclick="player(5);"></button>
+        <button id="box-6" onclick="player(6);"></button>
+        <button id="box-7" onclick="player(7);"></button>
+        <button id="box-8" onclick="player(8);"></button>
+        <button id="box-9" onclick="player(9);"></button>
+    </div>
+    <div id="progress"></div>
+    <div id="winner"></div>
+    <div id="score"></div>
+    <p>
+        You can also play with keyboard :); press from 1-9 to go, and press r to reset.
+    </p>
+    <button onclick="reset();">Reset</button>
+    <script src="script.js"></script>
+</body>
